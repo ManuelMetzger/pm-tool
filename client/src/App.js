@@ -24,10 +24,17 @@ const cache = new InMemoryCache({
   },
 });
 
+// Production interface (has to have the ip adress of the host computer for others in the same network to reach it)
 const client = new ApolloClient({
-  uri: "http://localhost:5000/graphql",
+  uri: "http://XXX.XXX.XXX.XX/graphql",
   cache,
 });
+
+// Development interface
+// const client = new ApolloClient({
+//   uri: "http://localhost:5000/graphql",
+//   cache,
+// });
 
 function App() {
   return (
